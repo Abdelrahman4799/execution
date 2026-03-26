@@ -21,13 +21,15 @@ claude --version
 
 The Playwright MCP server allows Claude Code to control a real browser. You need to add it to your Claude Code configuration.
 
-### Option A: Via Claude Code CLI
+### Option A: Via Claude Code CLI (Recommended)
 
-Run this command in your terminal:
+Open a terminal **inside the project folder** and run:
 
 ```bash
-claude mcp add playwright -- npx @anthropic-ai/mcp-server-playwright
+claude mcp add playwright -- npx @playwright/mcp@latest
 ```
+
+> **Important:** Do NOT add `--headless` flag. The browser must run in headed (visible) mode.
 
 ### Option B: Manual Configuration
 
@@ -35,20 +37,20 @@ claude mcp add playwright -- npx @anthropic-ai/mcp-server-playwright
    - **Windows:** `%USERPROFILE%\.claude.json`
    - **Mac/Linux:** `~/.claude.json`
 
-2. Add the Playwright MCP server under `mcpServers`:
+2. Find the `"projects"` section for this folder and add Playwright under `"mcpServers"`:
 
 ```json
-{
-  "mcpServers": {
-    "playwright": {
-      "command": "npx",
-      "args": ["@anthropic-ai/mcp-server-playwright"]
-    }
+"mcpServers": {
+  "playwright": {
+    "type": "stdio",
+    "command": "npx",
+    "args": ["@playwright/mcp@latest"],
+    "env": {}
   }
 }
 ```
 
-> If the file already has other MCP servers, just add the `"playwright"` entry inside the existing `"mcpServers"` object.
+> **Important:** Do NOT include `--headless` in the args. Tests must run with a visible browser.
 
 ## Step 3: Verify MCP Server
 
@@ -89,7 +91,10 @@ Results will be appended to `test-report.md` automatically.
 - Try installing the package globally: `npm install -g @anthropic-ai/mcp-server-playwright`
 - Restart Claude Code after changing the config
 
-### Browser not opening
+### Browser not opening / running headless
+- Check your MCP config doesn't have `--headless` in the args
+- Fix by running: `claude mcp remove playwright && claude mcp add playwright -- npx @playwright/mcp@latest`
+- Restart Claude Code after changing the config
 - Ensure no firewall is blocking Chromium
 - Try running `npx playwright install chromium` to install the browser binary
 

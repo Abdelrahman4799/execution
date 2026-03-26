@@ -25,7 +25,12 @@
       "mcp__playwright__browser_file_upload",
       "mcp__playwright__browser_console_messages",
       "mcp__playwright__browser_network_requests",
-      "Bash(gh auth:*)"
+      "Bash(gh auth:*)",
+      "Bash(git config:*)",
+      "Bash(node -e \"const d=require\\(''''fs''''\\).readFileSync\\(''''/dev/stdin'''',''''utf8''''\\); const j=JSON.parse\\(d\\); console.log\\(JSON.stringify\\(j.mcpServers||{}, null,2\\)\\)\")",
+      "Read(//c/Users/LENOVO/OneDrive/Desktop/execution/$USERPROFILE/**)",
+      "Read(//c/Users/LENOVO/OneDrive/Desktop/execution/$HOME/**)",
+      "Bash(claude mcp:*)"
     ]
   }
 }
