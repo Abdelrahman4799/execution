@@ -1,0 +1,141 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+"179098","Test Case","should display table with request type name, request type Display Name, Inspection Type columns and verify the data displayed of each column",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Navigate to Request Types list page.",,,,
+,,,"2","Inspect the table headers.",,,,
+,,,"3","Then add a new request and check the values displayed matching the values entered by user when adding.",,,,
+,,,"4","Then edit the request and check the values displayed in the list.","Table displays columns: Request type name, Request type display name, Inspection Type.
+The values matching the data entered/ editable by user.",,,
+"179099","Test Case","TC-3.1-F01: should create request type with Scheduled inspection type",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Press on builders then request type.",,,,
+,,,"2","Navigate to Request Types list.",,,,
+,,,"3","Click 'Create Request Type'.",,,,
+,,,"4","Enter unique name.",,,,
+,,,"5","Enter display name.",,,,
+,,,"6","Select 'Scheduled' radio button.",,,,
+,,,"7","Click Save.","Success message displayed. System redirects to Request Types list. New request type appears in the table with Scheduled inspection type.",,,
+"179100","Test Case","TC-3.1-F02: should create request type with Incident inspection type",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Press on builders then request type.",,,,
+,,,"2","Navigate to Request Types list.",,,,
+,,,"3","Click 'Create Request Type'.",,,,
+,,,"4","Enter unique name.",,,,
+,,,"5","Enter display name.",,,,
+,,,"6","Select 'Incident' radio button.",,,,
+,,,"7","Click Save.","Success message displayed. System redirects to Request Types list. New request type appears in the table with Incident inspection type.",,,
+"179101","Test Case","TC-3.1-F03: should edit display name of existing request type",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Create a request type.",,,,
+,,,"2","From the list, click Edit on the created row.",,,,
+,,,"3","Modify the display name.",,,,
+,,,"4","Click Save.","Success message displayed. System redirects to list. Updated display name is shown in the table.",,,
+"179102","Test Case","TC-3.1-F04: should edit inspection type of request type",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Create a request type with Scheduled type.",,,,
+,,,"2","From the list, click Edit on the created row.",,,,
+,,,"3","Change inspection type to Incident.",,,,
+,,,"4","Click Save.","Success message displayed. System redirects to list. Inspection type is updated to Incident.",,,
+"179103","Test Case","TC-3.1-F05: should soft delete a request type and retain data",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Create a request type.",,,,
+,,,"2","From the list, click Delete on the created row.",,,,
+,,,"3","Confirm deletion in the dialog.","Success message displayed. Request type disappears from the active list. Data is retained in the system (soft delete).",,,
+"179104","Test Case","Should delete the requests types (anytime)",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","First: delete request types after making WF.",,,,
+,,,"2","Second: delete request types after creating requests.",,,,
+,,,"3","Third: delete after linking in (linking and targets)",,,,
+,,,"4","Fourth: delete after create report builder.",,,,
+,,,"5","….","No error displayed, and can delete at anytime.",,,
+"179105","Test Case","TC-3.1-B01: should handle maximum length name",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Navigate to Create Request Type.",,,,
+,,,"2","Enter a name with 200+ characters.",,,,
+,,,"3","Enter display name and request type name with maximum length.",,,,
+,,,"4","Select inspection type.",,,,
+,,,"5","Click Save.","System either saves successfully (if within max length) or shows a validation error for exceeding max length.",,,
+"179106","Test Case","TC-3.1-B02: should accept single character name",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Navigate to Create Request Type.",,,,
+,,,"2","Enter a single character as name (display and request type).",,,,
+,,,"3","Enter display name.",,,,
+,,,"4","Select inspection type.",,,,
+,,,"5","Click Save.","System either saves successfully or shows minimum length validation error.",,,
+"179107","Test Case","TC-3.1-B03: should accept Arabic text in name and display name",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Navigate to Create Request Type.",,,,
+,,,"2","Enter Arabic text as name.",,,,
+,,,"3","Enter Arabic text as display name.",,,,
+,,,"4","Select Incident inspection type.",,,,
+,,,"5","Click Save.","Success message displayed. System redirects to list. Arabic name appears correctly in the table.",,,
+"179108","Test Case","TC-3.1-N01: should reject duplicate request type name and request type display name",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Create a request type with name 'DupName'.",,,,
+,,,"2","Navigate to Create Request Type again.",,,,
+,,,"3","Enter the same name 'DupName' and same request type display name.",,,,
+,,,"4","Fill other fields.",,,,
+,,,"5","Click Save.","System displays an error message indicating the name must be unique. Request type is NOT created.",,,
+"179109","Test Case","TC-3.1-N04: should not save without selecting inspection type",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Navigate to Create Request Type.",,,,
+,,,"2","Enter name and display name.",,,,
+,,,"3","Do NOT select any inspection type radio.",,,,
+,,,"4","Click Save.","System shows validation error. Form remains on the create page. Request type is NOT created.",,,
+"179110","Test Case","TC-3.1-N05: should not save with empty name field or empty type name field",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Navigate to Create Request Type.",,,,
+,,,"2","Leave name field empty then leave request type display name.",,,,
+,,,"3","Enter display name.",,,,
+,,,"4","Select inspection type.",,,,
+,,,"5","Click Save.","System shows validation error on the name field. Form remains on the create page. Request type is NOT created.",,,
+"179111","Test Case","Check updated request name will be displayed with the new name in all impacted pages",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","1- Admin update request display name.",,,,
+,,,"2","2- Check all pages with request display name.","The new name will be displayed correctly.",,,
+"179112","Test Case","Check to sort the values of the columns",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Admin sort the values ascending and descending for each column.","The user can sort correctly.",,,
+"179113","Test Case","TC-3.1-N02: BR01 - should block editing name after linked to inspection form",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Create a request type.",,,,
+,,,"2","Link it to an inspection form (UC-3.6).",,,,
+,,,"3","Navigate to edit the request type.",,,,
+,,,"4","Attempt to modify the name field.","Name field is disabled/read-only. System prevents editing per BR01.",,,
+"179114","Test Case","TC-3.1-N03: BR01 - should block editing inspection type after linked to inspection form",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Create a request type.",,,,
+,,,"2","Link it to an inspection form (UC-3.6).",,,,
+,,,"3","Navigate to edit the request type.",,,,
+,,,"4","Attempt to change the inspection type.","Inspection type radio buttons are disabled. System prevents editing per BR01.",,,
+"179115","Test Case","TC-3.1-I01: created request type should appear in Inspection Form dropdown",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Create a request type with Incident type.",,,,
+,,,"2","Navigate to Add Inspection Form (UC-3.6).",,,,
+,,,"3","Select 'Request Incident' subtype.",,,,
+,,,"4","Open the Request Type dropdown.","The newly created request type appears in the Request Type dropdown list.",,,
+"179116","Test Case","TC-3.1-I01: created request type should appear in Scheduled Form dropdown",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Create a request type with Incident type.",,,,
+,,,"2","Navigate to Add Inspection Form (UC-3.6).",,,,
+,,,"3","Select 'Request Scheduled' subtype.",,,,
+,,,"4","Open the Request Type dropdown.","The newly created request type appears in the Request Type dropdown list.",,,
+"179117","Test Case","TC-3.1-I02: soft-deleted request type should not appear for new forms (delete first: incident request then delete scheduled)",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Create and then soft-delete a request type.",,,,
+,,,"2","Navigate to Add Inspection Form (UC-3.6).",,,,
+,,,"3","Open the Request Type dropdown.","The soft-deleted request type does NOT appear in the dropdown. Existing data referencing it remains intact.",,,
+"179118","Test Case","Check to search/ reset search of name and display name",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Admin search for a specific name.","Request (s) matching will be displayed, and pagination will be working correctly.",,,
+,,,"2","Admin search for a specific display name.","Request (s) matching will be displayed, and pagination will be working correctly.",,,
+,,,"3","Admin reset the search.","All requests will be displayed again with pagination.",,,
+"179119","Test Case","Verify unauthorized user cannot create Request Type",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Login as any user other than admin.","User logged in.",,,
+,,,"2","Press on builders then request type.","This page will only be displayed to admin.",,,
+,,,"3","Copy URL displayed to admin, and paste in supervisor as example.","Error displayed that the user can't view this page (don't have access).",,,
+"179120","Test Case","Cancel the creation/ edit of request type",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Press on builders then request type.","
+",,,
+,,,"2","Navigate to Request Types list.","
+",,,
+,,,"3","Click 'Create Request Type'.","
+",,,
+,,,"4","Enter unique name.","
+",,,
+,,,"5","Enter display name.","
+",,,
+,,,"6","Select 'Scheduled' radio button.","
+",,,
+,,,"7","Click cancel.","The request type will not be created.",,,
+,,,"8","Repeat when edit any type, then press on cancel.","The request type will not be edited.",,,
+"179121","Test Case","Check after delete, admin can create the same request type again",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Create a request type.","
+",,,
+,,,"2","From the list, click Delete on the created row.","
+",,,
+,,,"3","Confirm deletion in the dialog.","Success message displayed. Request type disappears from the active list. Data is retained in the system (soft delete).",,,
+,,,"4","Press on add new request.","
+",,,
+,,,"5","Fill the fields with same data deleted.","
+",,,
+,,,"6","Press on save.","Request type will be displayed correctly.",,,

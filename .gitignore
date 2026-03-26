@@ -1,0 +1,15 @@
+# Playwright MCP artifacts
+.playwright-mcp/
+
+# Node artifacts (should not be generated, but just in case)
+node_modules/
+package.json
+package-lock.json
+
+# Test artifacts
+test-results/
+screenshots/
+
+# OS files
+Thumbs.db
+.DS_Store

@@ -1,0 +1,146 @@
+﻿ID,Work Item Type,Title,Test Step,Step Action,Step Expected,Area Path,Assigned To,State
+"179144","Test Case","TC-3.4-F01: should display Creation and End steps automatically",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Navigate to Request Types list.",,,,
+,,,"2","Click 'Build Workflow' on a request type.",,,,
+,,,"3","System displays Workflow Builder page.","Workflow Builder shows Creation step and End step created automatically. First step type = Creation (default).",,,
+"179145","Test Case","TC-3.4-F02: should add intermediate step with Supervisor actor and action",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Open Workflow Builder.",,,,
+,,,"2","Click 'Add Step' between Creation and End.",,,,
+,,,"3","Set Actor type = Supervisor (All supervisors within the selected user group.).",,,,
+,,,"4","Add an Action.",,,,
+,,,"5","Save.","Intermediate step is added. Supervisor actor and action are configured. Workflow validates successfully.",,,
+"179146","Test Case","TC-3.4-F03: should support all actor types - User, Committee, Group Role, Entity User",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Open Workflow Builder.",,,,
+,,,"2","Add a step.",,,,
+,,,"3","For each actor type (User, Committee, Group Role, Entity User): select the type and verify options appear.",,,,
+,,,"4","User: One active system user (excluding Admin and Inspector).",,,,
+,,,"5","Committee: A selected committee of users (any one member may perform the action).",,,,
+,,,"6","Group Role: A user holding a specific role within the user group.",,,,
+,,,"7","Entity User: The user representing the visited entity.","All actor types are available for selection on non-Start/End steps (BR08). Entity User excluded in Phase 1.",,,
+"179147","Test Case","TC-3.4-F04: should add notification to a step (all steps: start, end, and intermediate steps)",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Open Workflow Builder.",,,,
+,,,"2","Select a step.",,,,
+,,,"3","Add a notification (for all intermediate steps with option ""on entry"").",,,,
+,,,"4","Select a notification template.",,,,
+,,,"5","Save.",,,,
+,,,"6","Repeat when select after a timer (and select wait how many day/ hour/ minute).",,,,
+,,,"7","Repeat when select notification at the creation step.",,,,
+,,,"8","Repeat when select notification at end step.",,,,
+,,,"9","Check if the notification selected was SMS.",,,,
+,,,"10","Check if the notification selected was Email.","1- Notification is configured for the step. Template is selectable from the list.
+Important: need to be sure, when ""on entry"" was selected, if the step is beginning now -> the notification should be sent.
+2- To check the notification will be sent after the timer selected.
+3- Notifications should be sent correctly.
+4- SMS will be sent.
+5- Email will be sent.",,,
+"179148","Test Case","TC-3.4-F06: should clone an existing workflow",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Preconditions:",,,,
+,,,"2","Admin created active WF before.",,,,
+,,,"3","Open Workflow Builder.",,,,
+,,,"4","Click 'Clone Workflow'.",,,,
+,,,"5","Select source workflow.",,,,
+,,,"6","System clones all steps, actors, actions, notifications.","Cloned workflow appears with all configuration from the source. User can modify and save.",,,
+"179149","Test Case","TC-3.4-F07: should save workflow and validate structure",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Open Workflow Builder.",,,,
+,,,"2","Add steps with actors and actions.",,,,
+,,,"3","Click Save.",,,,
+,,,"4","System validates workflow structure.","Workflow saves successfully. Success message displayed.",,,
+"179150","Test Case","TC-3.4-B01: should allow workflow with only Creation and End steps (minimum)",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Open Workflow Builder.",,,,
+,,,"2","Do not add any intermediate steps.",,,,
+,,,"3","Configure Creation step with actor and action.",,,,
+,,,"4","Save.","Workflow saves successfully with minimum structure (Creation -> End).",,,
+"179151","Test Case","TC-3.4-B02: should handle workflow with maximum number of intermediate steps",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Open Workflow Builder.",,,,
+,,,"2","Add many intermediate steps (10+).",,,,
+,,,"3","Configure actors and actions for each.",,,,
+,,,"4","Save.","System handles large workflow. All steps saved and validated correctly.",,,
+"179152","Test Case","TC-3.4-B03: BR04 - END step should allow only notifications, no actor",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Open Workflow Builder.",,,,
+,,,"2","Select the END step.",,,,
+,,,"3","Verify no Actor field is available.",,,,
+,,,"4","Add a notification to END step.","END step shows only notification configuration. No Actor or Action fields available (BR04).",,,
+"179153","Test Case","TC-3.4-N01: BR01 - should not allow deleting Creation step",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Open Workflow Builder.",,,,
+,,,"2","Attempt to delete the Creation step.","Delete option is disabled or not available. System prevents deletion. Error shown if attempted.",,,
+"179154","Test Case","TC-3.4-N02: BR01 - should not allow deleting End step",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Open Workflow Builder.",,,,
+,,,"2","Attempt to delete the End step.","Delete option is disabled or not available. System prevents deletion.",,,
+"179155","Test Case","TC-3.4-N03: BR02 - should not allow Committee, inspector, specific user actors on Creation step",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Open Workflow Builder.",,,,
+,,,"2","Select the Creation step.",,,,
+,,,"3","Open Actor type dropdown.",,,,
+,,,"4","Look for 'Committee' option.",,,,
+,,,"5","Try to select inspector.",,,,
+,,,"6","Then try to select specific User.","All will not be allowed in creation step.",,,
+"179156","Test Case","TC-3.4-N06: BR03 - should show validation error for step without Actor",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Open Workflow Builder.",,,,
+,,,"2","Add an intermediate step.",,,,
+,,,"3","Add an Action but do NOT set an Actor.",,,,
+,,,"4","Click Save.","Validation error: Each step (except END) must have one Actor (BR03). Workflow is NOT saved.",,,
+"179157","Test Case","TC-3.4-N07: BR03 - should show validation error for step without Action",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Open Workflow Builder.",,,,
+,,,"2","Add an intermediate step.",,,,
+,,,"3","Set an Actor but do NOT add any Action.",,,,
+,,,"4","Click Save.","Validation error: Each step (except END) must have at least one Action (BR03). Workflow is NOT saved.",,,
+"179158","Test Case","TC-3.4-N09: should not allow building workflow when request instances exist",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Create requests using the form (instances exist).",,,,
+,,,"2","Navigate to Build Workflow for that form.","System prevents workflow modification. Error indicates request instances already exist.",,,
+"179159","Test Case","TC-3.4-I01: BR06 - actors should resolve from linking relationship",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Create a link (UC-3.5) with UG1.",,,,
+,,,"2","Build workflow with Supervisor actor.",,,,
+,,,"3","Create a request.",,,,
+,,,"4","Check who receives the next step task.","Supervisors from linked UG1 receive the task as per the linking relationship (BR06).",,,
+"179160","Test Case","TC-3.4-I02: BR07 - entity from linking should populate entity field",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Create a link with Entity Group 'EG1'.",,,,
+,,,"2","Create a request through the linked form.",,,,
+,,,"3","Check the Entity field.","Entity field is populated from the linked Entity Group (BR07).",,,
+"179161","Test Case","TC-3.4-I03: BR05 - workflow should trigger when request is submitted",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Build a workflow with 3 steps (Creation -> Review -> End).","
+",,,
+,,,"2","Create a request (submits through Creation).","
+",,,
+,,,"3","Check workflow progress.","Workflow automatically moves to the Review step. Next step actor is assigned (BR05).
++ a notification will be displayed in the portal in notifications list (the request pending on his action -> and if click on it , he will be redirected to the task details).
+Important to check the notification displayed to each user till the end of workflow.",,,
+"179162","Test Case","Check that the admin can't activate the form (without fields and without workflow)
+both should be valid",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Admin tries to activate without fields (or with invalid fields).",,,,
+,,,"2","Admin tries to activate without workflow (or with invalid workflow)","Both should be valid and exist, to make activate form.",,,
+"179163","Test Case","Check to deactivate forms (if not in use).",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Admin tries to deactivate a form (not in use).","Can deactivate correctly without errors.",,,
+"179164","Test Case","Check to delete forms (If not in use).",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","1- Admin tries to delete a form (not in use).",,,,
+,,,"2","2- When try to delete a form (in use).",,,,
+,,,"3","3- Check to delete (not in use) active/ inactive form.",,,,
+,,,"4","4- Check to delete linked form (but not in use).","1- Can delete correctly.
+2- Error will be displayed as he can't delete it.
+3- Can delete both correctly.
+4- Can delete it -> and need to check the record in page (linking and targets).",,,
+"179165","Test Case","Check to edit workflow (if form not in use)",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Preconditions:",,,,
+,,,"2","Admin already drag and drop fields (with editable/ visible to certain actors).",,,,
+,,,"3","Steps:",,,,
+,,,"4","1- Edit actor step 2 (from supervisor to manager as example).",,,,
+,,,"5","2- Edit its actions.",,,,
+,,,"6","3- Press on save.",,,,
+,,,"7","4- Try to edit a form (in use).","1- The workflow will be updated (unless it is in use) -> check also the fields after editing actors/ actions.
+2- The form (in use) can't be editable.",,,
+"179166","Test Case","Check to delete any user (from users page) after being selected as an actor (try also to delete committee as example)",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Preconditions:",,,,
+,,,"2","1- Admin select user X in step 2 as an actor.",,,,
+,,,"3","2- He delete him from (users) page.",,,,
+,,,"4","Steps:",,,,
+,,,"5","Check the step 2 actor.",,,,
+,,,"6","Repeat when deactivate any user.","The actor will be removed and the form will not be valid.",,,
+"179167","Test Case","Check to delete any notification template after being used ",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Preconditions:",,,,
+,,,"2","1- Admin select template X in step 2 as a notification.",,,,
+,,,"3","2- He delete it from (Notifications Templates) page.",,,,
+,,,"4","Steps:",,,,
+,,,"5","Check the notifications in step 2.","The notification will be removed and the form will remain valid (as it is optional)",,,
+"179168","Test Case","Check to clone invalid WF",,,,"Bravo-Product","Isadora Medhat <CODELABSYS\Isadora.Medhat>","Design"
+,,,"1","Preconditions:",,,,
+,,,"2","Created invalid workflow.",,,,
+,,,"3","Steps:",,,,
+,,,"4","Try to clone it.","Invalid workflow can't be cloned.",,,
